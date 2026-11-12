@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ImoveCheck — autenticação e gerenciamento de imóveis
 
 ## Tecnologias
@@ -42,3 +43,6 @@ A aplicação gera um token aleatório de uso único, válido por 1 hora, e envi
 - O link “Precisa de ajuda?” abre o aplicativo de e-mail local para `suporte@imovecheck.local`; substitua por um endereço real de suporte.
 - A autenticação não substitui autorização administrativa nem implementa perfis/permissões avançadas.
 - A senha deve ter pelo menos 8 caracteres. O limite superior de 72 bytes é aplicado para compatibilidade com bcrypt/PHP.
+=======
+# ImoveCheck
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c

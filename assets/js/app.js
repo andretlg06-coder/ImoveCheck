@@ -1,8 +1,11 @@
 const API_URL = 'api/imoveis.php';
+<<<<<<< HEAD
 let csrfToken = '';
 const csrfReady = fetch('api/auth-api.php?action=csrf', {credentials:'same-origin'})
   .then(r => r.json()).then(data => { csrfToken = data.csrf || ''; })
   .catch(() => {});
+=======
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
 
 const escapeHTML = (value = '') => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
@@ -80,11 +83,18 @@ if (document.body.dataset.page === 'cadastro') {
     data.append('inquilino', form.inquilino.value.trim());
     selectedFiles.forEach(file => data.append('fotos[]', file));
 
+<<<<<<< HEAD
     await csrfReady;
     saveButton.disabled = true;
     saveButton.innerHTML = '<span class="spinner"></span> Salvando...';
     try {
       const response = await fetch(API_URL, { method: 'POST', body: data, credentials: 'same-origin', headers: {'X-CSRF-Token': csrfToken} });
+=======
+    saveButton.disabled = true;
+    saveButton.innerHTML = '<span class="spinner"></span> Salvando...';
+    try {
+      const response = await fetch(API_URL, { method: 'POST', body: data });
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
       const result = await readJson(response);
       window.location.href = `index.php?sucesso=${encodeURIComponent(result.message)}`;
     } catch (error) {
@@ -123,8 +133,12 @@ if (document.body.dataset.page === 'lista') {
           if (!confirm('Tem certeza de que deseja excluir este imóvel e suas fotos?')) return;
           button.disabled = true;
           try {
+<<<<<<< HEAD
             await csrfReady;
             const response = await fetch(`${API_URL}?id=${button.dataset.delete}`, { method: 'DELETE', credentials: 'same-origin', headers: {'X-CSRF-Token': csrfToken} });
+=======
+            const response = await fetch(`${API_URL}?id=${button.dataset.delete}`, { method: 'DELETE' });
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
             const data = await readJson(response);
             showMessage(feedback, data.message, 'success');
             loadProperties();
@@ -143,6 +157,7 @@ if (document.body.dataset.page === 'lista') {
   if (params.has('sucesso')) showMessage(feedback, params.get('sucesso'), 'success');
   loadProperties();
 }
+<<<<<<< HEAD
 
 // Encerramento de sessão disponível nas páginas protegidas.
 document.querySelector('#logout-link')?.addEventListener('click', async event => {
@@ -161,3 +176,5 @@ document.querySelector('#logout-link')?.addEventListener('click', async event =>
     alert(error.message);
   } 
 });
+=======
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c

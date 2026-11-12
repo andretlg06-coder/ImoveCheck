@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 require_once __DIR__ . '/api/auth.php';
 if (!current_user($pdo)) { header('Location: login.php'); exit; }
+=======
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
 $pageTitle = "ImoveCheck | Imóveis cadastrados";
 ?>
 <!DOCTYPE html>
@@ -17,7 +20,11 @@ $pageTitle = "ImoveCheck | Imóveis cadastrados";
     <div class="topbar-inner">
       <a class="brand" href="index.php"><span class="brand-icon">▤</span><strong>ImoveCheck</strong></a>
       <span class="brand-subtitle">Sistema de Inspeção de Imóveis</span>
+<<<<<<< HEAD
       <a class="home-link" href="#" id="logout-link">Sair ↗</a>
+=======
+      <a class="home-link" href="index.php">⌂ <span>Início</span></a>
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
     </div>
   </header>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CREATE DATABASE IF NOT EXISTS imovecheck CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE imovecheck;
 
@@ -19,6 +20,20 @@ CREATE TABLE IF NOT EXISTS imoveis (
   criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   INDEX idx_imoveis_usuario (usuario_id),
   CONSTRAINT fk_imoveis_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+=======
+CREATE DATABASE IF NOT EXISTS imovecheck
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE imovecheck;
+
+CREATE TABLE IF NOT EXISTS imoveis (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  endereco VARCHAR(255) NOT NULL,
+  proprietario VARCHAR(150) NULL,
+  inquilino VARCHAR(150) NULL,
+  criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS fotos (
@@ -26,6 +41,7 @@ CREATE TABLE IF NOT EXISTS fotos (
   imovel_id INT UNSIGNED NOT NULL,
   caminho VARCHAR(255) NOT NULL,
   criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+<<<<<<< HEAD
   CONSTRAINT fk_fotos_imoveis FOREIGN KEY (imovel_id) REFERENCES imoveis(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -52,3 +68,9 @@ CREATE TABLE IF NOT EXISTS tokens_recuperacao (
 
 -- IMPORTANTE: este script cria a estrutura nova. Faça backup do banco antigo antes de importar.
 -- Para preservar registros antigos de imóveis, veja MIGRACAO_BANCO.sql.
+=======
+  CONSTRAINT fk_fotos_imoveis
+    FOREIGN KEY (imovel_id) REFERENCES imoveis(id)
+    ON DELETE CASCADE
+) ENGINE=InnoDB;
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c

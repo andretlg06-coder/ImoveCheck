@@ -1,7 +1,11 @@
 <?php
 declare(strict_types=1);
 
+<<<<<<< HEAD
 $host = 'localhost:8080';
+=======
+$host = 'localhost';
+>>>>>>> b3a6ad64c7840176f52da3eb49195e8a1b714e5c
 $dbname = 'imovecheck';
 $username = 'root';
 $password = ''; // Padrão do XAMPP. Altere se seu MySQL tiver senha.
